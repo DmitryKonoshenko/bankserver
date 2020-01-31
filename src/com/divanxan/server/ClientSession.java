@@ -7,7 +7,7 @@ import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 import java.util.Set;
 
-import static com.divanxan.service.ResponseServiceImpl.requestPreparation;
+import static com.divanxan.service.ResponseService.requestPreparation;
 
 public class ClientSession implements Runnable {
 

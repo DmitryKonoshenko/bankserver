@@ -2,7 +2,7 @@ package com.divanxan.service;
 
 import java.math.BigDecimal;
 
-public class ResponseServiceImpl {
+public class ResponseService {
     public static String requestPreparation(String request) {
         boolean ifGet = request.contains("GET");
 
@@ -42,7 +42,7 @@ public class ResponseServiceImpl {
         long from = Long.parseLong(data.substring(5, data.indexOf('&')));
         long to = Long.parseLong(data.substring(data.indexOf('&') + 4, data.lastIndexOf('&')));
         BigDecimal amount = new BigDecimal(data.substring(data.lastIndexOf('=') + 1).trim());
-        return AccountServiceImpl.moneyTransfers(from, to, amount);
+        return AccountService.moneyTransfers(from, to, amount);
     }
 
 }

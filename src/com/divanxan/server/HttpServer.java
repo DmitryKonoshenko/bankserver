@@ -2,7 +2,6 @@ package com.divanxan.server;
 
 import com.divanxan.data.Account;
 import com.divanxan.service.AccountService;
-import com.divanxan.service.AccountServiceImpl;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -40,7 +39,7 @@ public class HttpServer {
         //create concurrent collection of users
         ConcurrentHashMap<Account, Integer> userLength = new ConcurrentHashMap<>();
         users = ConcurrentHashMap.newKeySet(userLength.size());
-        AccountService accountService = new AccountServiceImpl(users);
+        AccountService.initUsers(users);
         // filling up account collections
         fillingUpUsers();
     }
